@@ -1,0 +1,21 @@
+{
+  "lookup": {
+    "eJyLrq6NBQAEOAGx": "action_listen",
+    "eJwtysEJwDAIheFVHKATZJVSJIgHoTElMbmIu1dob+/nfafHAf4M3ljJpGsB/wZqbVzgj1umsaZdk0ca0UwrQF0tCdKa1hsPzHsLccT1AkMII3s=": "action_contact_customer_service",
+    "eJyVjtEJwCAMRFdxgE7gKqUEkRQETUSjP+LuTWl/pfQvR+7d3T7mZkYu2MF5CUzWjOcAcgmteUUMVZDU2yoW9QRSKdZ4JlEL+FaFExbQdw8e5x17sx0hMmdFnrwVACeXpND3lGXlj3HHBcltYRE=": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohJTUnsyy1qDK+ILUoMz+ltjYWABNEH7Q=": "action_delivery_period",
+    "eJyFjk0KgCAQha/iATqBV4kYIicYUEdGE0K8exO2auPuPfjez9r6YloSrLAfhTha04aAuAe05jOecsGo7JVRlKGotljj0FNFuSGhELv+tr2RiuCZk5Kj5sfByRKUnQ//B+YPtgff2lH1": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohJTUnsyy1qDK+uCSxpLS4tjYWABP8H9U=": "action_delivery_status",
+    "eJyFjssJwCAQRFuxgFRgKyEskmxAUFd0FYLYezaYkxdvM/Dms7e+qRYTVjAnWwpatSEgGI9a/cbZzBiELRmTMDaIZa0udLZieiCz4ZL71/ZFKoIjikKOmomDm5IXdj08D6wfHC8DZlJ5": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohJTUnsyy1qDI+vwCkrri2NhYANAggPQ==": "action_delivery_options",
+    "eJyNzlEKgCAMBuCr7ACdwKtEDKkFgjpRE0K8exN7qod62w/f/m2ubYIaIhXUazbsFdQxoNeOFNzBmpTJiz0SRTHGS8wKNrKmUDyRQ3ep9bq+UwgtcxA6ep4Qd45O8Pfp14kfTywXVQJUGQ==": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohMy8tvyi3tjYWAAX4G/k=": "action_my_custom_form",
+    "eJyFzdEJgDAMBNBVMoATdBWRIBIh0CTSRkGKu9uqfyL+5eBdri9HB2VJtOE4OZsGKPeBOgoFeELk7KTVrplSNaw1egDW2ZIc7UmTG2E0Wyq427LjtGY3wYt18L/0qnwsDic4lUfG": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohOT+vBKgkPqM0NzEvPjEdKFhbGwsAlH4hQA==": "action_contact_human_agent",
+    "eJyNjksKgDAMRK/SA3iCXkUkFIlaaJPS36Z4d1PqsqC7meFlMmu7F9VCxApmz5ZJqzYEkPGo1WucTRlJ2JIwCmNJbNZqZ8qCwFW8ITCnhHdv7GcVwTEHoUfVhIWDoxf+e8Ds0b812wMvFFgl": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhJDU5Iy8zOTEnvri0oCC/qKS2NhYAU1AglQ==": "action_technical_support",
+    "eJyNjksKgDAMRK/SA3iCXkUklBKxUJPQpt0U725Edy50NwNvPvM4JjekYIcQNTF5N24BFHb07jE5VUUytlUsxiQyq94pxo1SDBlqE+Gix9V3hTpCZhZj76IXCSuX3ejv8ffInx/LCZfeVXk=": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohJTUnsyy1qDI+OSOxKD21tjYWABKCH5s=": "action_delivery_charge",
+    "eJyFjlsKgCAQRbfiAlqBW4kYxKYSfDGaEOLeG7Gvfvy7F859rLUtokbCAkpnE7wUdQjwyqEUn7EmZfTM3gmJGePZZil2tKYgPaAvRSe23tYjBcGGEJkcNT8OjkCO2fnwf2D+YHsBxB1RkQ==": "action_listen"
+  }
+}

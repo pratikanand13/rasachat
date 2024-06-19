@@ -1,36 +1,49 @@
-version: "2.0"
+version: "3.1"
 stories:
-- story: contact customer service
-  steps:
-  - intent: contact_customer_service
-  - action: utter_contact_customer_service
+  - story: contact customer service
+    steps:
+      - intent: contact_customer_service
+      - action: action_contact_customer_service
+      - active_loop: contact_customer_service_form
 
-- story: contact human agent
-  steps:
-  - intent: contact_human_agent
-  - action: utter_contact_human_agent
+  - story: contact human agent
+    steps:
+      - intent: contact_human_agent
+      - action: action_contact_human_agent
+      - active_loop: contact_human_agent_form
 
-- story: technical support
-  steps:
-  - intent: technical_support
-  - action: utter_technical_support
+  - story: technical support
+    steps:
+      - intent: technical_support
+      - action: action_technical_support
+      - active_loop: technical_support_form
 
-- story: delivery options
-  steps:
-  - intent: delivery_options
-  - action: utter_delivery_options
+  - story: delivery options
+    steps:
+      - intent: delivery_options
+      - action: action_delivery_options
+      - active_loop: delivery_options_form
 
-- story: delivery charge
-  steps:
-  - intent: delivery_charge
-  - action: utter_delivery_charge
+  - story: delivery charge
+    steps:
+      - intent: delivery_charge
+      - action: action_delivery_charge
+      - active_loop: delivery_charge_form
 
-- story: delivery status
-  steps:
-  - intent: delivery_status
-  - action: utter_delivery_status
+  - story: delivery status
+    steps:
+      - intent: delivery_status
+      - action: action_delivery_status
+      - active_loop: delivery_status_form
 
-- story: delivery period
-  steps:
-  - intent: delivery_period
-  - action: utter_delivery_period
+  - story: delivery period
+    steps:
+      - intent: delivery_period
+      - action: action_delivery_period
+      - active_loop: delivery_period_form
+
+  - story: User wants to fill the form
+    steps:
+      - intent: inform
+      - action: action_my_custom_form
+      - active_loop: my_custom_form

@@ -1,4 +1,4 @@
-version: "2.0"
+version: "3.1"
 
 intents:
   - contact_customer_service
@@ -8,6 +8,7 @@ intents:
   - delivery_charge
   - delivery_status
   - delivery_period
+  - custom_inquiry
 
 entities:
   - inquiry
@@ -32,6 +33,8 @@ entities:
   - status
   - order_date
   - expected_time
+  - custom_field1
+  - custom_field2
 
 slots:
   inquiry:
@@ -188,25 +191,148 @@ slots:
         entity: expected_time
       - type: from_text
 
+  custom_field1:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: custom_field1
+      - type: from_text
+
+  custom_field2:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: custom_field2
+      - type: from_text
+
 responses:
   utter_contact_customer_service:
     - text: "Please provide the nature of your inquiry, preferred contact method, urgency, and any previous interactions."
-
   utter_contact_human_agent:
     - text: "Please provide the reason for contact, urgency, preferred contact method, and your availability."
-
   utter_technical_support:
     - text: "Please specify the type of technical issue, your device, any error messages, troubleshooting steps, and urgency."
-
   utter_delivery_options:
     - text: "Please provide the destination, any special requirements, delivery options for the location, and preferred delivery method."
-
   utter_delivery_charge:
     - text: "Please provide the delivery location, order details, any available discounts, and payment method."
-
   utter_delivery_status:
     - text: "Please provide the order number, tracking information, your contact details, and the current status."
-
   utter_delivery_period:
     - text: "Please provide the order date, expected delivery time, urgency, and tracking information."
-  
+  utter_custom_inquiry:
+    - text: "Please provide the custom field 1 and custom field 2 information."
+
+  utter_ask_inquiry:
+    - text: "Please provide the nature of your inquiry."
+  utter_ask_contact_method:
+    - text: "What is your preferred contact method?"
+  utter_ask_urgency:
+    - text: "How urgent is your inquiry?"
+  utter_ask_previous_interactions:
+    - text: "Have you had any previous interactions regarding this inquiry?"
+  utter_ask_reason:
+    - text: "What is the reason for contact?"
+  utter_ask_availability:
+    - text: "When are you available?"
+  utter_ask_issue_type:
+    - text: "What type of issue are you experiencing?"
+  utter_ask_device:
+    - text: "What device are you using?"
+  utter_ask_error_message:
+    - text: "Please provide any error messages you received."
+  utter_ask_troubleshooting_steps:
+    - text: "What troubleshooting steps have you tried?"
+  utter_ask_destination:
+    - text: "What is the delivery destination?"
+  utter_ask_special_requirements:
+    - text: "Do you have any special requirements?"
+  utter_ask_delivery_method:
+    - text: "What is your preferred delivery method?"
+  utter_ask_location:
+    - text: "Where is the delivery location?"
+  utter_ask_order_details:
+    - text: "Please provide the order details."
+  utter_ask_discounts:
+    - text: "Are there any discounts available?"
+  utter_ask_payment_method:
+    - text: "What is your preferred payment method?"
+  utter_ask_order_number:
+    - text: "What is your order number?"
+  utter_ask_tracking_info:
+    - text: "Please provide the tracking information."
+  utter_ask_status:
+    - text: "What is the current status of your order?"
+  utter_ask_order_date:
+    - text: "When did you place the order?"
+  utter_ask_expected_time:
+    - text: "What is the expected delivery time?"
+  utter_ask_custom_field1:
+    - text: "Please provide the custom field 1 information."
+  utter_ask_custom_field2:
+    - text: "Please provide the custom field 2 information."
+
+forms:
+  contact_customer_service_form:
+    required_slots:
+      - inquiry
+      - contact_method
+      - urgency
+      - previous_interactions
+
+  contact_human_agent_form:
+    required_slots:
+      - reason
+      - urgency
+      - contact_method
+      - availability
+
+  technical_support_form:
+    required_slots:
+      - issue_type
+      - device
+      - error_message
+      - troubleshooting_steps
+      - urgency
+
+  delivery_options_form:
+    required_slots:
+      - destination
+      - special_requirements
+      - delivery_method
+
+  delivery_charge_form:
+    required_slots:
+      - location
+      - order_details
+      - discounts
+      - payment_method
+
+  delivery_status_form:
+    required_slots:
+      - order_number
+      - tracking_info
+      - status
+
+  delivery_period_form:
+    required_slots:
+      - order_date
+      - expected_time
+      - urgency
+      - tracking_info
+
+  my_custom_form:
+    required_slots:
+      - custom_field1
+      - custom_field2
+
+actions:
+  - action_contact_customer_service
+  - action_contact_human_agent
+  - action_technical_support
+  - action_delivery_options
+  - action_delivery_charge
+  - action_delivery_status
+  - action_delivery_period
+  - action_custom_inquiry
+  - action_my_custom_form
