@@ -1,0 +1,36 @@
+version: "2.0"
+rules:
+- rule: Respond to contact customer service
+  steps:
+  - intent: contact_customer_service
+  - action: utter_contact_customer_service
+
+- rule: Respond to contact human agent
+  steps:
+  - intent: contact_human_agent
+  - action: utter_contact_human_agent
+
+- rule: Respond to technical support
+  steps:
+  - intent: technical_support
+  - action: utter_technical_support
+
+- rule: Respond to delivery options
+  steps:
+  - intent: delivery_options
+  - action: utter_delivery_options
+
+- rule: Respond to delivery charge
+  steps:
+  - intent: delivery_charge
+  - action: utter_delivery_charge
+
+- rule: Respond to delivery status
+  steps:
+  - intent: delivery_status
+  - action: utter_delivery_status
+
+- rule: Respond to delivery period
+  steps:
+  - intent: delivery_period
+  - action: utter_delivery_period

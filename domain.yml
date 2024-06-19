@@ -1,0 +1,212 @@
+version: "2.0"
+
+intents:
+  - contact_customer_service
+  - contact_human_agent
+  - technical_support
+  - delivery_options
+  - delivery_charge
+  - delivery_status
+  - delivery_period
+
+entities:
+  - inquiry
+  - contact_method
+  - urgency
+  - previous_interactions
+  - reason
+  - availability
+  - issue_type
+  - device
+  - error_message
+  - troubleshooting_steps
+  - destination
+  - special_requirements
+  - delivery_method
+  - location
+  - order_details
+  - discounts
+  - payment_method
+  - order_number
+  - tracking_info
+  - status
+  - order_date
+  - expected_time
+
+slots:
+  inquiry:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: inquiry
+      - type: from_text
+
+  contact_method:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: contact_method
+      - type: from_text
+
+  urgency:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: urgency
+      - type: from_text
+
+  previous_interactions:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: previous_interactions
+      - type: from_text
+
+  reason:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: reason
+      - type: from_text
+
+  availability:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: availability
+      - type: from_text
+
+  issue_type:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: issue_type
+      - type: from_text
+
+  device:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: device
+      - type: from_text
+
+  error_message:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: error_message
+      - type: from_text
+
+  troubleshooting_steps:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: troubleshooting_steps
+      - type: from_text
+
+  destination:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: destination
+      - type: from_text
+
+  special_requirements:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: special_requirements
+      - type: from_text
+
+  delivery_method:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: delivery_method
+      - type: from_text
+
+  location:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: location
+      - type: from_text
+
+  order_details:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: order_details
+      - type: from_text
+
+  discounts:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: discounts
+      - type: from_text
+
+  payment_method:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: payment_method
+      - type: from_text
+
+  order_number:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: order_number
+      - type: from_text
+
+  tracking_info:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: tracking_info
+      - type: from_text
+
+  status:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: status
+      - type: from_text
+
+  order_date:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: order_date
+      - type: from_text
+
+  expected_time:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: expected_time
+      - type: from_text
+
+responses:
+  utter_contact_customer_service:
+    - text: "Please provide the nature of your inquiry, preferred contact method, urgency, and any previous interactions."
+
+  utter_contact_human_agent:
+    - text: "Please provide the reason for contact, urgency, preferred contact method, and your availability."
+
+  utter_technical_support:
+    - text: "Please specify the type of technical issue, your device, any error messages, troubleshooting steps, and urgency."
+
+  utter_delivery_options:
+    - text: "Please provide the destination, any special requirements, delivery options for the location, and preferred delivery method."
+
+  utter_delivery_charge:
+    - text: "Please provide the delivery location, order details, any available discounts, and payment method."
+
+  utter_delivery_status:
+    - text: "Please provide the order number, tracking information, your contact details, and the current status."
+
+  utter_delivery_period:
+    - text: "Please provide the order date, expected delivery time, urgency, and tracking information."
+  

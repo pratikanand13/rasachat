@@ -1,0 +1,36 @@
+version: "2.0"
+stories:
+- story: contact customer service
+  steps:
+  - intent: contact_customer_service
+  - action: utter_contact_customer_service
+
+- story: contact human agent
+  steps:
+  - intent: contact_human_agent
+  - action: utter_contact_human_agent
+
+- story: technical support
+  steps:
+  - intent: technical_support
+  - action: utter_technical_support
+
+- story: delivery options
+  steps:
+  - intent: delivery_options
+  - action: utter_delivery_options
+
+- story: delivery charge
+  steps:
+  - intent: delivery_charge
+  - action: utter_delivery_charge
+
+- story: delivery status
+  steps:
+  - intent: delivery_status
+  - action: utter_delivery_status
+
+- story: delivery period
+  steps:
+  - intent: delivery_period
+  - action: utter_delivery_period

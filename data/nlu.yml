@@ -1,0 +1,43 @@
+version: "2.0"
+nlu:
+- intent: contact_customer_service
+  examples: |
+    - I want to contact customer service
+    - How can I reach customer service?
+    - I have a question for customer service
+
+- intent: contact_human_agent
+  examples: |
+    - I need to talk to a human agent
+    - Connect me to a human agent
+    - I want to speak with a human
+
+- intent: technical_support
+  examples: |
+    - I need technical support
+    - My laptop has an issue
+    - I'm facing a connectivity problem
+
+- intent: delivery_options
+  examples: |
+    - What are the delivery options for my location?
+    - I have special delivery requirements
+    - What delivery methods do you offer?
+
+- intent: delivery_charge
+  examples: |
+    - What are the delivery charges?
+    - Can you tell me the order details?
+    - Are there any discounts available for delivery?
+
+- intent: delivery_status
+  examples: |
+    - What is the status of my order?
+    - Can you provide tracking information?
+    - What is the current status of my delivery?
+
+- intent: delivery_period
+  examples: |
+    - When will my order be delivered?
+    - What is the expected delivery time?
+    - Can you provide the tracking information for my order?

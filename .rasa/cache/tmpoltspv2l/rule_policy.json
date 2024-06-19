@@ -1,0 +1,28 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"delivery_charge\"}}]": "utter_delivery_charge",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"delivery_charge\"}}, {\"prev_action\": {\"action_name\": \"utter_delivery_charge\"}, \"user\": {\"intent\": \"delivery_charge\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"delivery_period\"}}]": "utter_delivery_period",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"delivery_period\"}}, {\"prev_action\": {\"action_name\": \"utter_delivery_period\"}, \"user\": {\"intent\": \"delivery_period\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"delivery_options\"}}]": "utter_delivery_options",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"delivery_options\"}}, {\"prev_action\": {\"action_name\": \"utter_delivery_options\"}, \"user\": {\"intent\": \"delivery_options\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"contact_customer_service\"}}]": "utter_contact_customer_service",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"contact_customer_service\"}}, {\"prev_action\": {\"action_name\": \"utter_contact_customer_service\"}, \"user\": {\"intent\": \"contact_customer_service\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"technical_support\"}}]": "utter_technical_support",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"technical_support\"}}, {\"prev_action\": {\"action_name\": \"utter_technical_support\"}, \"user\": {\"intent\": \"technical_support\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"delivery_status\"}}]": "utter_delivery_status",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"delivery_status\"}}, {\"prev_action\": {\"action_name\": \"utter_delivery_status\"}, \"user\": {\"intent\": \"delivery_status\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"contact_human_agent\"}}]": "utter_contact_human_agent",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"contact_human_agent\"}}, {\"prev_action\": {\"action_name\": \"utter_contact_human_agent\"}, \"user\": {\"intent\": \"contact_human_agent\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "predicting default action with intent session_start",
+      "predicting default action with intent back",
+      "predicting default action with intent restart"
+    ]
+  }
+}
