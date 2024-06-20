@@ -1,0 +1,40 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"account_access_issue\"}}]": "action_account_access_issue",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"account_access_issue\"}}, {\"prev_action\": {\"action_name\": \"action_account_access_issue\"}, \"user\": {\"intent\": \"account_access_issue\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"create_account\"}}]": "action_create_account",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"create_account\"}}, {\"prev_action\": {\"action_name\": \"action_create_account\"}, \"user\": {\"intent\": \"create_account\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"switch_account\"}}]": "action_switch_account",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"switch_account\"}}, {\"prev_action\": {\"action_name\": \"action_switch_account\"}, \"user\": {\"intent\": \"switch_account\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"reset_password\"}}]": "action_reset_password",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"reset_password\"}}, {\"prev_action\": {\"action_name\": \"action_reset_password\"}, \"user\": {\"intent\": \"reset_password\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"edit_account\"}}]": "action_edit_account",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"edit_account\"}}, {\"prev_action\": {\"action_name\": \"action_edit_account\"}, \"user\": {\"intent\": \"edit_account\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"manage_account\"}}]": "action_manage_account",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"manage_account\"}}, {\"prev_action\": {\"action_name\": \"action_manage_account\"}, \"user\": {\"intent\": \"manage_account\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"parental_controls\"}}]": "action_parental_controls",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"parental_controls\"}}, {\"prev_action\": {\"action_name\": \"action_parental_controls\"}, \"user\": {\"intent\": \"parental_controls\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"recover_account\"}}]": "action_recover_account",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"recover_account\"}}, {\"prev_action\": {\"action_name\": \"action_recover_account\"}, \"user\": {\"intent\": \"recover_account\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"delete_account\"}}]": "action_delete_account",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"delete_account\"}}, {\"prev_action\": {\"action_name\": \"action_delete_account\"}, \"user\": {\"intent\": \"delete_account\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"security_issue\"}}]": "action_security_issue",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"security_issue\"}}, {\"prev_action\": {\"action_name\": \"action_security_issue\"}, \"user\": {\"intent\": \"security_issue\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"login_error\"}}]": "action_login_error",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"login_error\"}}, {\"prev_action\": {\"action_name\": \"action_login_error\"}, \"user\": {\"intent\": \"login_error\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"account_verification\"}}]": "action_account_verification",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"account_verification\"}}, {\"prev_action\": {\"action_name\": \"action_account_verification\"}, \"user\": {\"intent\": \"account_verification\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bank_details\"}}]": "action_bank_details",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bank_details\"}}, {\"prev_action\": {\"action_name\": \"action_bank_details\"}, \"user\": {\"intent\": \"bank_details\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "predicting default action with intent restart",
+      "predicting default action with intent session_start",
+      "predicting default action with intent back"
+    ]
+  }
+}

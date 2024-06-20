@@ -2,299 +2,201 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.forms import FormValidationAction
-import re
 
-# Validation and Submission Actions for Reset Password Form
-class ValidateResetPasswordForm(FormValidationAction):
+class ActionResetPassword(Action):
     def name(self) -> Text:
-        return "validate_reset_password_form"
+        return "action_reset_password"
 
-    def validate_Username(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> Dict[Text, Any]:
-        if isinstance(slot_value, str) and len(slot_value) > 0:
-            return {"Username": slot_value}
-        dispatcher.utter_message(text="Invalid username provided.")
-        return {"Username": None}
-
-    def validate_Email(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> Dict[Text, Any]:
-        if re.match(r"[^@]+@[^@]+\.[^@]+", slot_value):
-            return {"Email": slot_value}
-        dispatcher.utter_message(text="Invalid email address provided.")
-        return {"Email": None}
-
-    def validate_Reset_method(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> Dict[Text, Any]:
-        if slot_value in ["SMS", "Email"]:
-            return {"Reset_method": slot_value}
-        dispatcher.utter_message(text="Invalid reset method provided.")
-        return {"Reset_method": None}
-
-class ActionSubmitResetPassword(Action):
-    def name(self) -> Text:
-        return "action_submit_reset_password"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text="Your password reset request has been submitted successfully.")
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # Your logic to reset the password
+        dispatcher.utter_message(text="Your password has been reset.")
         return []
 
-# Validation and Submission Actions for Edit Account Form
-class ValidateEditAccountForm(FormValidationAction):
+class ActionEditAccount(Action):
     def name(self) -> Text:
-        return "validate_edit_account_form"
+        return "action_edit_account"
 
-    def validate_Info_type(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> Dict[Text, Any]:
-        if slot_value in ["name", "email", "address", "payment method"]:
-            return {"Info_type": slot_value}
-        dispatcher.utter_message(text="Invalid info type provided.")
-        return {"Info_type": None}
-
-class ActionSubmitEditAccount(Action):
-    def name(self) -> Text:
-        return "action_submit_edit_account"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text="Your account edit request has been submitted successfully.")
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # Your logic to edit the account
+        dispatcher.utter_message(text="Your account has been edited.")
         return []
 
-# Validation and Submission Actions for Create Account Form
-class ValidateCreateAccountForm(FormValidationAction):
+class ActionCreateAccount(Action):
     def name(self) -> Text:
-        return "validate_create_account_form"
+        return "action_create_account"
 
-    def validate_Name(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> Dict[Text, Any]:
-        if isinstance(slot_value, str) and len(slot_value) > 0:
-            return {"Name": slot_value}
-        dispatcher.utter_message(text="Invalid name provided.")
-        return {"Name": None}
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        name = tracker.get_slot('name')
+        email = tracker.get_slot('email')
+        mobile_number = tracker.get_slot('mobile_number')
 
-    def validate_Email(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> Dict[Text, Any]:
-        if re.match(r"[^@]+@[^@]+\.[^@]+", slot_value):
-            return {"Email": slot_value}
-        dispatcher.utter_message(text="Invalid email address provided.")
-        return {"Email": None}
+        # Logic to create the account with name, email, and mobile number
+        # Example: create_account_in_db(name, email, mobile_number)
 
-    def validate_Password(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> Dict[Text, Any]:
-        if isinstance(slot_value, str) and len(slot_value) >= 8:
-            return {"Password": slot_value}
-        dispatcher.utter_message(text="Password must be at least 8 characters long.")
-        return {"Password": None}
+        dispatcher.utter_message(text=f"Account created for {name} with email {email} and phone number {mobile_number}.")
+        return [SlotSet("name", None), SlotSet("email", None), SlotSet("mobile_number", None)]
 
-    def validate_Mobile_number(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> Dict[Text, Any]:
-        if re.match(r"^\d{10}$", slot_value):
-            return {"Mobile_number": slot_value}
-        dispatcher.utter_message(text="Invalid mobile number provided.")
-        return {"Mobile_number": None}
-
-class ActionSubmitCreateAccount(Action):
+class ActionSwitchAccount(Action):
     def name(self) -> Text:
-        return "action_submit_create_account"
+        return "action_switch_account"
 
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text="Your account creation request has been submitted successfully.")
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # Your logic to switch the account
+        dispatcher.utter_message(text="You have switched accounts.")
         return []
 
-# Validation and Submission Actions for Switch Account Form
-class ValidateSwitchAccountForm(FormValidationAction):
+class ActionDeleteAccount(Action):
     def name(self) -> Text:
-        return "validate_switch_account_form"
+        return "action_delete_account"
 
-    def validate_Username(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> Dict[Text, Any]:
-        if isinstance(slot_value, str) and len(slot_value) > 0:
-            return {"Username": slot_value}
-        dispatcher.utter_message(text="Invalid username provided.")
-        return {"Username": None}
-
-    def validate_Password(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> Dict[Text, Any]:
-        if isinstance(slot_value, str) and len(slot_value) >= 8:
-            return {"Password": slot_value}
-        dispatcher.utter_message(text="Password must be at least 8 characters long.")
-        return {"Password": None}
-
-class ActionSubmitSwitchAccount(Action):
-    def name(self) -> Text:
-        return "action_submit_switch_account"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text="Your account switch request has been submitted successfully.")
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # Your logic to delete the account
+        dispatcher.utter_message(text="Your account has been deleted.")
         return []
 
-# Validation and Submission Actions for Delete Account Form
-class ValidateDeleteAccountForm(FormValidationAction):
+class ActionAccountVerification(Action):
     def name(self) -> Text:
-        return "validate_delete_account_form"
+        return "action_account_verification"
 
-    def validate_Username(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> Dict[Text, Any]:
-        if isinstance(slot_value, str) and len(slot_value) > 0:
-            return {"Username": slot_value}
-        dispatcher.utter_message(text="Invalid username provided.")
-        return {"Username": None}
-
-    def validate_Password(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> Dict[Text, Any]:
-        if isinstance(slot_value, str) and len(slot_value) >= 8:
-            return {"Password": slot_value}
-        dispatcher.utter_message(text="Password must be at least 8 characters long.")
-        return {"Password": None}
-
-class ActionSubmitDeleteAccount(Action):
-    def name(self) -> Text:
-        return "action_submit_delete_account"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text="Your account deletion request has been submitted successfully.")
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # Your logic to verify the account
+        dispatcher.utter_message(text="Your account has been verified.")
         return []
 
-# Validation and Submission Actions for Account Verification Form
-class ValidateAccountVerificationForm(FormValidationAction):
+class ActionLoginError(Action):
     def name(self) -> Text:
-        return "validate_account_verification_form"
+        return "action_login_error"
 
-    def validate_Email(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> Dict[Text, Any]:
-        if re.match(r"[^@]+@[^@]+\.[^@]+", slot_value):
-            return {"Email": slot_value}
-        dispatcher.utter_message(text="Invalid email address provided.")
-        return {"Email": None}
-
-class ActionSubmitAccountVerification(Action):
-    def name(self) -> Text:
-        return "action_submit_account_verification"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text="Your account verification request has been submitted successfully.")
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # Your logic to handle login errors
+        dispatcher.utter_message(text="There was an error logging in.")
         return []
 
-# Validation and Submission Actions for Login Error Form
-class ValidateLoginErrorForm(FormValidationAction):
+class ActionRecoverAccount(Action):
     def name(self) -> Text:
-        return "validate_login_error_form"
+        return "action_recover_account"
 
-    def validate_Username(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> Dict[Text, Any]:
-        if isinstance(slot_value, str) and len(slot_value) > 0:
-            return {"Username": slot_value}
-        dispatcher.utter_message(text="Invalid username provided.")
-        return {"Username": None}
-
-class ActionSubmitLoginError(Action):
-    def name(self) -> Text:
-        return "action_submit_login_error"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text="Your login error request has been submitted successfully.")
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # Your logic to recover the account
+        dispatcher.utter_message(text="Your account has been recovered.")
         return []
 
-# Validation and Submission Actions for Recover Account Form
-class ValidateRecoverAccountForm(FormValidationAction):
+class ActionBankDetails(Action):
     def name(self) -> Text:
-        return "validate_recover_account_form"
+        return "action_bank_details"
 
-    def validate_Username(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> Dict[Text, Any]:
-        if isinstance(slot_value, str) and len(slot_value) > 0:
-            return {"Username": slot_value}
-        dispatcher.utter_message(text="Invalid username provided.")
-        return {"Username": None}
-
-    def validate_Email(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> Dict[Text, Any]:
-        if re.match(r"[^@]+@[^@]+\.[^@]+", slot_value):
-            return {"Email": slot_value}
-        dispatcher.utter_message(text="Invalid email address provided.")
-        return {"Email": None}
-
-class ActionSubmitRecoverAccount(Action):
-    def name(self) -> Text:
-        return "action_submit_recover_account"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text="Your account recovery request has been submitted successfully.")
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # Your logic to update bank details
+        dispatcher.utter_message(text="Your bank details have been updated.")
         return []
 
-# Validation and Submission Actions for Bank Details Form
-class ValidateBankDetailsForm(FormValidationAction):
+class ActionAccountAccessIssue(Action):
     def name(self) -> Text:
-        return "validate_bank_details_form"
+        return "action_account_access_issue"
 
-    def validate_Info_type(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> Dict[Text, Any]:
-        if slot_value in ["account number", "sort code", "IBAN"]:
-            return {"Info_type": slot_value}
-        dispatcher.utter_message(text="Invalid info type provided.")
-        return {"Info_type": None}
-
-class ActionSubmitBankDetails(Action):
-    def name(self) -> Text:
-        return "action_submit_bank_details"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text="Your bank details request has been submitted successfully.")
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # Your logic to handle account access issues
+        dispatcher.utter_message(text="Your account access issue has been resolved.")
         return []
 
-# Validation and Submission Actions for Account Access Issue Form
-class ValidateAccountAccessIssueForm(FormValidationAction):
+class ActionManageAccount(Action):
     def name(self) -> Text:
-        return "validate_account_access_issue_form"
+        return "action_manage_account"
 
-    def validate_Username(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> Dict[Text, Any]:
-        if isinstance(slot_value, str) and len(slot_value) > 0:
-            return {"Username": slot_value}
-        dispatcher.utter_message(text="Invalid username provided.")
-        return {"Username": None}
-
-class ActionSubmitAccountAccessIssue(Action):
-    def name(self) -> Text:
-        return "action_submit_account_access_issue"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text="Your account access issue request has been submitted successfully.")
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # Your logic to manage the account
+        dispatcher.utter_message(text="Your account has been managed.")
         return []
 
-# Validation and Submission Actions for Manage Account Form
-class ValidateManageAccountForm(FormValidationAction):
+class ActionSecurityIssue(Action):
     def name(self) -> Text:
-        return "validate_manage_account_form"
+        return "action_security_issue"
 
-    def validate_Info_type(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> Dict[Text, Any]:
-        if slot_value in ["update profile", "change settings", "manage subscriptions"]:
-            return {"Info_type": slot_value}
-        dispatcher.utter_message(text="Invalid info type provided.")
-        return {"Info_type": None}
-
-class ActionSubmitManageAccount(Action):
-    def name(self) -> Text:
-        return "action_submit_manage_account"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text="Your account management request has been submitted successfully.")
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # Your logic to handle security issues
+        dispatcher.utter_message(text="Your security issue has been resolved.")
         return []
 
-# Validation and Submission Actions for Security Issue Form
-class ValidateSecurityIssueForm(FormValidationAction):
+class ActionParentalControls(Action):
     def name(self) -> Text:
-        return "validate_security_issue_form"
+        return "action_parental_controls"
 
-    def validate_Info_type(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> Dict[Text, Any]:
-        if slot_value in ["report fraud", "suspicious activity"]:
-            return {"Info_type": slot_value}
-        dispatcher.utter_message(text="Invalid info type provided.")
-        return {"Info_type": None}
-
-class ActionSubmitSecurityIssue(Action):
-    def name(self) -> Text:
-        return "action_submit_security_issue"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text="Your security issue request has been submitted successfully.")
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # Your logic to handle parental controls
+        dispatcher.utter_message(text="Parental controls have been set.")
         return []
 
-# Validation and Submission Actions for Parental Controls Form
-class ValidateParentalControlsForm(FormValidationAction):
+class ValidateAccountForm(FormValidationAction):
     def name(self) -> Text:
-        return "validate_parental_controls_form"
+        return "validate_account_form"
 
-    def validate_Info_type(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> Dict[Text, Any]:
-        if slot_value in ["set restrictions", "monitor activity"]:
-            return {"Info_type": slot_value}
-        dispatcher.utter_message(text="Invalid info type provided.")
-        return {"Info_type": None}
+    def validate_username(self, slot_value: Any,
+                          dispatcher: CollectingDispatcher,
+                          tracker: Tracker,
+                          domain: Dict[Text, Any]) -> Dict[Text, Any]:
+        # Validate the username slot
+        if len(slot_value) > 0:
+            return {"username": slot_value}
+        else:
+            dispatcher.utter_message(text="Please provide a valid username.")
+            return {"username": None}
 
-class ActionSubmitParentalControls(Action):
-    def name(self) -> Text:
-        return "action_submit_parental_controls"
+    def validate_email(self, slot_value: Any,
+                       dispatcher: CollectingDispatcher,
+                       tracker: Tracker,
+                       domain: Dict[Text, Any]) -> Dict[Text, Any]:
+        # Validate the email slot
+        if "@" in slot_value:
+            return {"email": slot_value}
+        else:
+            dispatcher.utter_message(text="Please provide a valid email.")
+            return {"email": None}
 
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text="Your parental controls request has been submitted successfully.")
-        return []
+    def validate_name(self, slot_value: Any,
+                      dispatcher: CollectingDispatcher,
+                      tracker: Tracker,
+                      domain: Dict[Text, Any]) -> Dict[Text, Any]:
+        # Validate the name slot
+        if len(slot_value) > 0:
+            return {"name": slot_value}
+        else:
+            dispatcher.utter_message(text="Please provide a valid name.")
+            return {"name": None}
+
+    def validate_mobile_number(self, slot_value: Any,
+                               dispatcher: CollectingDispatcher,
+                               tracker: Tracker,
+                               domain: Dict[Text, Any]) -> Dict[Text, Any]:
+        # Validate the mobile number slot
+        if slot_value.isdigit() and len(slot_value) == 10:
+            return {"mobile_number": slot_value}
+        else:
+            dispatcher.utter_message(text="Please provide a valid mobile number.")
+            return {"mobile_number": None}

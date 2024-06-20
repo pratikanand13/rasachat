@@ -1,120 +1,138 @@
 version: "3.1"
 
 intents:
-  - request_reset_password
-  - create_account
-  - recover_account
-  - submit_bank_details
-  - account_access_issue
-  - manage_account
-  - security_issue
-  - parental_controls
   - reset_password
   - edit_account
+  - create_account
   - switch_account
   - delete_account
   - account_verification
   - login_error
+  - recover_account
   - bank_details
+  - account_access_issue
+  - manage_account
+  - security_issue
+  - parental_controls
 
 entities:
-  - Username
-  - Email
-  - Reset_method
-  - Info_type
-  - Name
-  - Password
-  - Mobile_number
+  - username
+  - email
+  - sms
+  - name
+  - address
+  - payment_method
+  - password
+  - mobile_number
+  - email_verification
+  - phone_verification
+  - clear_cache
+  - clear_cookies
+  - reset_password
+  - another_device
+  - account_locked
+  - error
+  - last_successful_login_date
+  - bank_address
+  - reason_for_updation
+  - security
+  - locked_out
+  - unauthorized_access
+  - change_in_password
+  - change_in_security_settings
+  - access_from_different_network
+  - settings
+  - preferences
+  - subscriptions
+  - review_activity
+  - security_alerts
+  - type_of_security_issue
+  - restricted_content
+  - age_appropriate_settings
+  - parental_controls
 
 slots:
-  Username:
+  requested_slot:
+    type: any
+    mappings:
+      - type: from_text
+  username:
     type: text
     mappings:
       - type: from_entity
-        entity: Username
-  Email:
+        entity: username
+      - type: from_text
+  email:
     type: text
     mappings:
       - type: from_entity
-        entity: Email
-  Reset_method:
+        entity: email
+      - type: from_text
+  name:
     type: text
     mappings:
       - type: from_entity
-        entity: Reset_method
-  Info_type:
+        entity: name
+      - type: from_text
+  mobile_number:
     type: text
     mappings:
       - type: from_entity
-        entity: Info_type
-  Name:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: Name
-  Password:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: Password
-  Mobile_number:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: Mobile_number
+        entity: mobile_number
+      - type: from_text
 
 responses:
   utter_greet:
-    - text: "Hello! How can I help you today?"
-  utter_goodbye:
-    - text: "Goodbye! Have a nice day."
+    - text: "Hello! How can I assist you with your account today?"
+  utter_reset_password:
+    - text: "I can help you reset your password. Can you provide your username or email?"
+  utter_edit_account:
+    - text: "What information would you like to edit in your account?"
+  utter_create_account:
+    - text: "Let's get started with creating a new account. Can you provide your name, email, and mobile number?"
+  utter_switch_account:
+    - text: "You want to switch accounts. Please log out and log in with the new account details."
+  utter_delete_account:
+    - text: "Are you sure you want to delete your account permanently?"
+  utter_account_verification:
+    - text: "We need to verify your email or mobile number."
+  utter_login_error:
+    - text: "Having trouble logging in? Try clearing your cache or cookies."
+  utter_recover_account:
+    - text: "I can help you recover your account. Did you forget your password or is your account locked?"
+  utter_bank_details:
+    - text: "What bank details would you like to update?"
+  utter_account_access_issue:
+    - text: "Let's resolve your access issue. Are you locked out or facing unauthorized access?"
+  utter_manage_account:
+    - text: "What would you like to manage in your account settings or preferences?"
+  utter_security_issue:
+    - text: "Can you describe the security issue you're facing?"
+  utter_parental_controls:
+    - text: "Let's set up parental controls. What settings would you like to customize?"
 
 forms:
-  reset_password_form:
+  account_form:
     required_slots:
-      - Username
-      - Email
-      - Reset_method
-  create_account_form:
-    required_slots:
-      - Name
-      - Email
-      - Password
-      - Mobile_number
-  recover_account_form:
-    required_slots:
-      - Username
-      - Email
-  bank_details_form:
-    required_slots:
-      - Info_type
-  account_access_issue_form:
-    required_slots:
-      - Username
-  manage_account_form:
-    required_slots:
-      - Info_type
-  security_issue_form:
-    required_slots:
-      - Info_type
-  parental_controls_form:
-    required_slots:
-      - Info_type
+      - name
+      - email
+      - mobile_number
 
 actions:
-  - action_submit_reset_password
-  - action_submit_create_account
-  - action_submit_recover_account
-  - action_submit_bank_details
-  - action_submit_account_access_issue
-  - action_submit_manage_account
-  - action_submit_security_issue
-  - action_submit_parental_controls
-  - validate_reset_password_form
-  - validate_create_account_form
-  - validate_recover_account_form
-  - validate_bank_details_form
-  - validate_account_access_issue_form
-  - validate_manage_account_form
-  - validate_security_issue_form
-  - validate_parental_controls_form
+  - action_reset_password
+  - action_edit_account
+  - action_create_account
+  - action_switch_account
+  - action_delete_account
+  - action_account_verification
+  - action_login_error
+  - action_recover_account
+  - action_bank_details
+  - action_account_access_issue
+  - action_manage_account
+  - action_security_issue
+  - action_parental_controls
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

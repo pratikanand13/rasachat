@@ -1,0 +1,61 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bank_details\"}}]": "action_bank_details",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bank_details\"}}, {\"prev_action\": {\"action_name\": \"action_bank_details\"}, \"user\": {\"intent\": \"bank_details\"}}]": "utter_bank_details",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bank_details\"}}, {\"prev_action\": {\"action_name\": \"action_bank_details\"}, \"user\": {\"intent\": \"bank_details\"}}, {\"prev_action\": {\"action_name\": \"utter_bank_details\"}, \"user\": {\"intent\": \"bank_details\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"reset_password\"}}]": "action_reset_password",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"reset_password\"}}, {\"prev_action\": {\"action_name\": \"action_reset_password\"}, \"user\": {\"intent\": \"reset_password\"}}]": "utter_reset_password",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"reset_password\"}}, {\"prev_action\": {\"action_name\": \"action_reset_password\"}, \"user\": {\"intent\": \"reset_password\"}}, {\"prev_action\": {\"action_name\": \"utter_reset_password\"}, \"user\": {\"intent\": \"reset_password\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"edit_account\"}}]": "action_edit_account",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"edit_account\"}}, {\"prev_action\": {\"action_name\": \"action_edit_account\"}, \"user\": {\"intent\": \"edit_account\"}}]": "utter_edit_account",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"edit_account\"}}, {\"prev_action\": {\"action_name\": \"action_edit_account\"}, \"user\": {\"intent\": \"edit_account\"}}, {\"prev_action\": {\"action_name\": \"utter_edit_account\"}, \"user\": {\"intent\": \"edit_account\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"parental_controls\"}}]": "action_parental_controls",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"parental_controls\"}}, {\"prev_action\": {\"action_name\": \"action_parental_controls\"}, \"user\": {\"intent\": \"parental_controls\"}}]": "utter_parental_controls",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"parental_controls\"}}, {\"prev_action\": {\"action_name\": \"action_parental_controls\"}, \"user\": {\"intent\": \"parental_controls\"}}, {\"prev_action\": {\"action_name\": \"utter_parental_controls\"}, \"user\": {\"intent\": \"parental_controls\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"greet\"}}]": "utter_greet",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"greet\"}}, {\"prev_action\": {\"action_name\": \"utter_greet\"}, \"user\": {\"intent\": \"greet\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"account_access_issue\"}}]": "action_account_access_issue",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"account_access_issue\"}}, {\"prev_action\": {\"action_name\": \"action_account_access_issue\"}, \"user\": {\"intent\": \"account_access_issue\"}}]": "utter_account_access_issue",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"account_access_issue\"}}, {\"prev_action\": {\"action_name\": \"action_account_access_issue\"}, \"user\": {\"intent\": \"account_access_issue\"}}, {\"prev_action\": {\"action_name\": \"utter_account_access_issue\"}, \"user\": {\"intent\": \"account_access_issue\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"security_issue\"}}]": "action_security_issue",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"security_issue\"}}, {\"prev_action\": {\"action_name\": \"action_security_issue\"}, \"user\": {\"intent\": \"security_issue\"}}]": "utter_security_issue",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"security_issue\"}}, {\"prev_action\": {\"action_name\": \"action_security_issue\"}, \"user\": {\"intent\": \"security_issue\"}}, {\"prev_action\": {\"action_name\": \"utter_security_issue\"}, \"user\": {\"intent\": \"security_issue\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"account_verification\"}}]": "action_account_verification",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"account_verification\"}}, {\"prev_action\": {\"action_name\": \"action_account_verification\"}, \"user\": {\"intent\": \"account_verification\"}}]": "utter_account_verification",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"account_verification\"}}, {\"prev_action\": {\"action_name\": \"action_account_verification\"}, \"user\": {\"intent\": \"account_verification\"}}, {\"prev_action\": {\"action_name\": \"utter_account_verification\"}, \"user\": {\"intent\": \"account_verification\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"create_account\"}}]": "action_create_account",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"create_account\"}}, {\"prev_action\": {\"action_name\": \"action_create_account\"}, \"user\": {\"intent\": \"create_account\"}}]": "utter_create_account",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"create_account\"}}, {\"prev_action\": {\"action_name\": \"action_create_account\"}, \"user\": {\"intent\": \"create_account\"}}, {\"prev_action\": {\"action_name\": \"utter_create_account\"}, \"user\": {\"intent\": \"create_account\"}}]": "account_form",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"create_account\"}}, {\"prev_action\": {\"action_name\": \"action_create_account\"}, \"user\": {\"intent\": \"create_account\"}}, {\"prev_action\": {\"action_name\": \"utter_create_account\"}, \"user\": {\"intent\": \"create_account\"}}, {\"active_loop\": {\"name\": \"account_form\"}, \"prev_action\": {\"action_name\": \"account_form\"}, \"user\": {\"intent\": \"create_account\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"manage_account\"}}]": "action_manage_account",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"manage_account\"}}, {\"prev_action\": {\"action_name\": \"action_manage_account\"}, \"user\": {\"intent\": \"manage_account\"}}]": "utter_manage_account",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"manage_account\"}}, {\"prev_action\": {\"action_name\": \"action_manage_account\"}, \"user\": {\"intent\": \"manage_account\"}}, {\"prev_action\": {\"action_name\": \"utter_manage_account\"}, \"user\": {\"intent\": \"manage_account\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"delete_account\"}}]": "action_delete_account",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"delete_account\"}}, {\"prev_action\": {\"action_name\": \"action_delete_account\"}, \"user\": {\"intent\": \"delete_account\"}}]": "utter_delete_account",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"delete_account\"}}, {\"prev_action\": {\"action_name\": \"action_delete_account\"}, \"user\": {\"intent\": \"delete_account\"}}, {\"prev_action\": {\"action_name\": \"utter_delete_account\"}, \"user\": {\"intent\": \"delete_account\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"switch_account\"}}]": "action_switch_account",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"switch_account\"}}, {\"prev_action\": {\"action_name\": \"action_switch_account\"}, \"user\": {\"intent\": \"switch_account\"}}]": "utter_switch_account",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"switch_account\"}}, {\"prev_action\": {\"action_name\": \"action_switch_account\"}, \"user\": {\"intent\": \"switch_account\"}}, {\"prev_action\": {\"action_name\": \"utter_switch_account\"}, \"user\": {\"intent\": \"switch_account\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"login_error\"}}]": "action_login_error",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"login_error\"}}, {\"prev_action\": {\"action_name\": \"action_login_error\"}, \"user\": {\"intent\": \"login_error\"}}]": "utter_login_error",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"login_error\"}}, {\"prev_action\": {\"action_name\": \"action_login_error\"}, \"user\": {\"intent\": \"login_error\"}}, {\"prev_action\": {\"action_name\": \"utter_login_error\"}, \"user\": {\"intent\": \"login_error\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"recover_account\"}}]": "action_recover_account",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"recover_account\"}}, {\"prev_action\": {\"action_name\": \"action_recover_account\"}, \"user\": {\"intent\": \"recover_account\"}}]": "utter_recover_account",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"recover_account\"}}, {\"prev_action\": {\"action_name\": \"action_recover_account\"}, \"user\": {\"intent\": \"recover_account\"}}, {\"prev_action\": {\"action_name\": \"utter_recover_account\"}, \"user\": {\"intent\": \"recover_account\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {
+      "[{\"prev_action\": {\"action_name\": \"utter_create_account\"}}, {\"active_loop\": {\"name\": \"account_form\"}, \"prev_action\": {\"action_name\": \"account_form\"}, \"user\": {\"intent\": \"create_account\"}}]": "do_not_predict_loop_action"
+    },
+    "rules_not_in_stories": [
+      "handling active loops and forms - account_form",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"greet\"}}]",
+      "predicting default action with intent back",
+      "predicting default action with intent session_start",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"greet\"}}, {\"prev_action\": {\"action_name\": \"utter_greet\"}, \"user\": {\"intent\": \"greet\"}}]",
+      "predicting default action with intent restart"
+    ]
+  }
+}

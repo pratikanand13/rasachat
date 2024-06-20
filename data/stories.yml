@@ -1,14 +1,83 @@
 version: "3.1"
 
 stories:
-  - story: Reset password story
-    steps:
-      - intent: request_reset_password
-      - action: reset_password_form
-      - active_loop: reset_password_form
-  - story: Create account story
-    steps:
-      - intent: create_account
-      - action: create_account_form
-      - active_loop: create_account_form
-  # Add similar stories for other intents
+- story: reset password
+  steps:
+  - intent: reset_password
+  - action: action_reset_password
+  - action: utter_reset_password
+
+- story: edit account
+  steps:
+  - intent: edit_account
+  - action: action_edit_account
+  - action: utter_edit_account
+
+- story: create account
+  steps:
+  - intent: create_account
+  - action: utter_create_account
+  - action: account_form
+  - active_loop: account_form
+  - action: action_create_account
+  - active_loop: null
+
+- story: switch account
+  steps:
+  - intent: switch_account
+  - action: action_switch_account
+  - action: utter_switch_account
+
+- story: delete account
+  steps:
+  - intent: delete_account
+  - action: action_delete_account
+  - action: utter_delete_account
+
+- story: account verification
+  steps:
+  - intent: account_verification
+  - action: action_account_verification
+  - action: utter_account_verification
+
+- story: login error
+  steps:
+  - intent: login_error
+  - action: action_login_error
+  - action: utter_login_error
+
+- story: recover account
+  steps:
+  - intent: recover_account
+  - action: action_recover_account
+  - action: utter_recover_account
+
+- story: bank details
+  steps:
+  - intent: bank_details
+  - action: action_bank_details
+  - action: utter_bank_details
+
+- story: account access issue
+  steps:
+  - intent: account_access_issue
+  - action: action_account_access_issue
+  - action: utter_account_access_issue
+
+- story: manage account
+  steps:
+  - intent: manage_account
+  - action: action_manage_account
+  - action: utter_manage_account
+
+- story: security issue
+  steps:
+  - intent: security_issue
+  - action: action_security_issue
+  - action: utter_security_issue
+
+- story: parental controls
+  steps:
+  - intent: parental_controls
+  - action: action_parental_controls
+  - action: utter_parental_controls

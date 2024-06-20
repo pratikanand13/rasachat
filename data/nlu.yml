@@ -1,63 +1,82 @@
 version: "3.1"
 
 nlu:
-- intent: request_reset_password
-  examples: |
-    - I forgot my password
-    - How can I reset my password?
-- intent: create_account
-  examples: |
-    - I want to create a new account
-    - Sign me up
-- intent: recover_account
-  examples: |
-    - I need to recover my account
-    - I lost access to my account
-- intent: submit_bank_details
-  examples: |
-    - Here are my bank details
-    - I need to submit my bank information
-- intent: account_access_issue
-  examples: |
-    - I can't access my account
-    - Having trouble logging in
-- intent: manage_account
-  examples: |
-    - I need to manage my account
-    - I want to update my account information
-- intent: security_issue
-  examples: |
-    - I have a security issue
-    - There is a problem with my account security
-- intent: parental_controls
-  examples: |
-    - I want to set up parental controls
-    - How can I enable parental controls?
-- intent: reset_password
-  examples: |
-    - Reset my password
-    - I need to reset my password
-- intent: edit_account
-  examples: |
-    - I want to edit my account
-    - Update my account details
-- intent: switch_account
-  examples: |
-    - Switch my account
-    - Change my account
-- intent: delete_account
-  examples: |
-    - Delete my account
-    - Remove my account
-- intent: account_verification
-  examples: |
-    - Verify my account
-    - I need to verify my account
-- intent: login_error
-  examples: |
-    - I encountered a login error
-    - There is an error when I try to log in
-- intent: bank_details
-  examples: |
-    - Provide my bank details
-    - My bank information is...
+  - intent: reset_password
+    examples: |
+      - I forgot my password
+      - Can you help me reset my password?
+      - I need to reset my password via SMS
+      - How do I reset my password using email?
+
+  - intent: edit_account
+    examples: |
+      - I want to edit my account information
+      - How can I change my email address?
+      - I need to update my payment method
+
+  - intent: create_account
+    examples: |
+      - I want to create a new account
+      - Sign me up
+      - How do I sign up?
+      - I need to register
+
+  - intent: switch_account
+    examples: |
+      - I want to log out and log in with another account
+      - How can I switch accounts?
+      - I need to transfer data to another account
+
+  - intent: delete_account
+    examples: |
+      - I want to delete my account
+      - How do I permanently delete my account?
+      - Can you help me remove my account?
+
+  - intent: account_verification
+    examples: |
+      - I need to verify my email
+      - How do I verify my mobile number?
+      - I need account verification
+
+  - intent: login_error
+    examples: |
+      - I can't log in
+      - I'm getting an error when I try to log in
+      - How do I reset my password?
+
+  - intent: recover_account
+    examples: |
+      - I forgot my password
+      - My account is locked
+      - How can I recover my account?
+
+  - intent: bank_details
+    examples: |
+      - I want to update my bank details
+      - How do I change my bank address?
+      - Can you help me update my bank information?
+
+  - intent: account_access_issue
+    examples: |
+      - I'm locked out of my account
+      - There's unauthorized access to my account
+      - How can I change my password?
+
+  - intent: manage_account
+    examples: |
+      - I want to change my account settings
+      - How can I update my preferences?
+      - I need to review my account activity
+
+  - intent: security_issue
+    examples: |
+      - There's unauthorized access to my account
+      - I'm receiving security alerts
+      - I'm facing a security issue
+
+  - intent: parental_controls
+    examples: |
+      - I want to set up parental controls
+      - How can I restrict content for my kids?
+      - I need to customize parental control settings
