@@ -1,0 +1,29 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"account_form\"}}]": "action_create_account",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"account_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"action_create_account\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"create_account\"}}]": "utter_create_account",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"create_account\"}}, {\"prev_action\": {\"action_name\": \"utter_create_account\"}, \"user\": {\"intent\": \"create_account\"}}]": "account_form",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"create_account\"}}, {\"prev_action\": {\"action_name\": \"utter_create_account\"}, \"user\": {\"intent\": \"create_account\"}}, {\"active_loop\": {\"name\": \"account_form\"}, \"prev_action\": {\"action_name\": \"account_form\"}, \"user\": {\"intent\": \"create_account\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [
+      "account_form"
+    ],
+    "rules_for_loop_unhappy_path": {
+      "[{\"prev_action\": {\"action_name\": \"utter_create_account\"}}, {\"active_loop\": {\"name\": \"account_form\"}, \"prev_action\": {\"action_name\": \"account_form\"}, \"user\": {\"intent\": \"create_account\"}}]": "do_not_predict_loop_action"
+    },
+    "rules_not_in_stories": [
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"account_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"action_create_account\"}}]",
+      "predicting default action with intent session_start",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"create_account\"}}]",
+      "predicting default action with intent restart",
+      "predicting default action with intent back",
+      "handling active loops and forms - account_form",
+      "handling active loops and forms - account_form - action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"create_account\"}}, {\"prev_action\": {\"action_name\": \"utter_create_account\"}, \"user\": {\"intent\": \"create_account\"}}]",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"account_form\"}}]"
+    ]
+  }
+}

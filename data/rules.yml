@@ -1,0 +1,19 @@
+version: "3.1"
+
+rules:
+  - rule: create account
+    steps:
+      - intent: create_account
+      - action: utter_create_account
+      - action: account_form
+      - active_loop: account_form
+  
+  - rule: submit created account form
+    condition:
+      - active_loop: account_form
+    steps:
+      - action: account_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: action_create_account

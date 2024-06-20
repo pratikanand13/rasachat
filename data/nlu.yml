@@ -1,82 +1,340 @@
 version: "3.1"
 
 nlu:
-  - intent: reset_password
-    examples: |
-      - I forgot my password
-      - Can you help me reset my password?
-      - I need to reset my password via SMS
-      - How do I reset my password using email?
+- intent: reset_password
+  examples: |
+    - I forgot my password
+    - How can I reset my password?
+    -I'm having trouble accessing my Account. Can you help me reset my password?
+    -I can't remember my password. How can I reset it and access my Account again?
+    -I've forgotten my password. How can I recover it and regain access to my Account?
+    -I can't seem to remember my password. How can I recover it?
+    -I can't remember my password. How do I reset it and access my Account again?
+    -I can't remember my password. How do I reset it?
+    -I can't access my Account. How do I reset my password?
+    -How can I recover my forgotten password?
+    -I cannot remember my password. Can you help me reset it?
+    -I'm having trouble remembering my password. Can you help me reset it?
+    -I forgot my Account password. How do I reset it?
+    -Can you help me recover a forgetten password or login credentials for Product?
+    -I forgot my password. How do I reset it?
+    -How do I recover my Account password if I've forgotten it?
+    -I forgot my password. How can I recover it?
+    -I forgot my password. How can I reset it and regain access to my Account?
+    -I forgot my Account password. How can I reset it?
+    -I need to recover my Account password. Can you assist me with that?
+    -I've forgotten my password. How can I regain access to my Account?
+    -I'm unable to access my Account due to a forgotten password. Can you assist with recovery?
+    -this one forgo password then reset mobile number but 2 factor authentication needed and recovery key didnt work now phone locked need unlock delete the ID
+    -can you help me?\nI already bought an iphone with my friend in a very bad condition, after I finished repairing it, my friend said he forgot his apple id and password
+    -now, this iphone has been locked because forgot the password and apple id
 
-  - intent: edit_account
-    examples: |
-      - I want to edit my account information
-      - How can I change my email address?
-      - I need to update my payment method
+- intent: create_account
+  examples: |
+    - I want to create a new account
+    - Sign me up
+    -I'm unable to create an Account.
+    -What are the requirements for creating a new Account?
+    -I'm having trouble registering for an Account. Can you help?
+    -How long does it take for a new Account to be activated?
+    -I'm having trouble creating an Account using my email address.
+    -What information do I need to provide when creating a new Account?
+    -I am having trouble creating an Account.
+    -Why am I having trouble registering for an Account?
+    -What's the procedure for creating a new Account on your platform?
+    -I'm having trouble creating an Account. Can you help?
+    -How do I create and manage user profiles or Accounts on product?
+    -How long does it take for my Account to be activated after registration?
+    -Why am I unable to register for an Account?
+    -I'm interested in creating an Account. What are the steps involved?
+    -What steps do I need to follow to create a new Account on your platform?
+    -What's the maximum number of Accounts I can have on your platform?
+    -I'm having trouble setting up a new Account. Can you walk me through it?
+    -Can you guide me through the process of setting up a new Account?
+    -I'm having trouble creating a new Account.
+    -How do I create an Account if I'm under 18 years old?
+    -Encountering issues while registering for an Account. Can you assist?
+    -Is there a limit on the number of Accounts I can create?
+    -I'm encountering errors while trying to register. Can you troubleshoot this issue?
+    -What should I do if I didn't receive an Account activation email?
+    -I want to create a new account. What information do I need to provide?
+    -How do I create a new account on your platform?
+    -What is needed to create an uniday account?
+    -I have an account but im not sure if im already registered as a SURE CLUB Member
 
-  - intent: create_account
-    examples: |
-      - I want to create a new account
-      - Sign me up
-      - How do I sign up?
-      - I need to register
+- intent: recover_account
+  examples: |
+    - I need to recover my account
+    - I lost access to my account
+    -I'm not receiving the Account recovery email. What should I do?
+    -I forgot the answers to my security questions. How can I recover my Account?
+    -Is it possible to recover my Account if I've forgotten my username?
+    -Can I reactivate my Account after deletion?
+    -Can I recover my Account if I've lost access to my phone number?
+    -Can I recover my Account if I've forgotten both my username and password?
+    -Is there a way to recover my Account if it's been permanently deleted?
+    -cant find it in my account
 
-  - intent: switch_account
-    examples: |
-      - I want to log out and log in with another account
-      - How can I switch accounts?
-      - I need to transfer data to another account
+- intent: bank_details
+  examples: |
+    - Here are my bank details
+    - I need to submit my bank information
+    -How do I unlink a bank Account from my saved payment methods?
+    -How do I link my e-commerce platform to my business bank account?
+    -What are the best practices for reconciling bank transactions with e-commerce sales?
+    -How do I add or update my bank account details?
+    -Is it safe to save my bank details on your website?
+    -How can I remove my bank details from my account?
 
-  - intent: delete_account
-    examples: |
-      - I want to delete my account
-      - How do I permanently delete my account?
-      - Can you help me remove my account?
+- intent: account_access_issue
+  examples: |
+    - I can't access my account
+    - Having trouble logging in
+    -I need to access an old Account but can't remember the email. Help!
+    -It says my account doesn't exist. What should I do?
+    -I suspect someone else is using my account. How can I secure it?
+    -I'm having trouble with two-factor authentication. How can I resolve this?
+    -Why am I getting a 'session expired' message when trying to log in?
+    -I received a security alert about a login attempt. What should I do?
+    -My account is disabled. How can I reactivate it?
+    -I'm getting a 'technical error' when trying to access my account. How can I fix this?
 
-  - intent: account_verification
-    examples: |
-      - I need to verify my email
-      - How do I verify my mobile number?
-      - I need account verification
+- intent: manage_account
+  examples: |
+    - I need to manage my account
+    - I want to update my account information
+    - How do I access and manage my Account settings for the product?
+    -I'm seeing unauthorized charges on my Account. How can I resolve this?
+    -Is there a limit on the number of Accounts I can create with the same email address?
+    -Dear administrator,\r\nYour account will be deactivated. This is because your page or activity on it is not in compliance with our contractual terms.\r\nIf you believe that the deactivation of this account was a mistake, we can guide you through a few steps to request protection. You should complete these steps within a few minutes to prevent permanent deletion of your account.\r\nConfirm your account here:\r\n������������������������ apply-caseid-1852358.me\r\nIf you do not confirm, our system will automatically block your account and you will not be able to use it again. \r\nThank you for helping us improve our services. \r\nTerms of Service Team ������������ 2024 Inc.
+    -Hi want to ask I at Atria Urban Republic and do have M2 when I want to make payment they said UR is not sale UNidays account
+    -I have Sure account under other email and I have applied vouchers using points from the Sure account to purchase the Macbook. I also mentioned to staff that I want to collect points for the Sure account.
 
-  - intent: login_error
-    examples: |
-      - I can't log in
-      - I'm getting an error when I try to log in
-      - How do I reset my password?
+- intent: security_issue
+  examples: |
+    - I have a security issue
+    - There is a problem with my account security
+    -How can I prevent unauthorized access to my Account?
+    -What should I do if I suspect unauthorized activity on my Account?
+    -I received a notification about suspicious activity on my account. What should I do?
+    -I think my account has been hacked. How can I secure it?
+    -How can I enable two-factor authentication on my account?
+    -What are the best practices for keeping my account secure?
 
-  - intent: recover_account
-    examples: |
-      - I forgot my password
-      - My account is locked
-      - How can I recover my account?
+- intent: parental_controls
+  examples: |
+    - I want to set up parental controls
+    - How can I enable parental controls?
+    - Can I set up parental controls for my child's Account?
+    -How do I set up parental controls on my account?"
+    -Can I restrict certain content or categories for my child's account?"
+    -How do I block specific items from being viewed or purchased?"
+    -Is there a way to set spending limits for my child's purchases?"
+    -Can I receive notifications for purchases made by my child's account?"
+    -How do I manage multiple child accounts under one parent account?"
+    -Can I restrict access to my payment methods for my child's account?"
+    -Is it possible to set time limits for when my child can access the site?"
+    -How can I monitor my child's activity and purchase history on the site?"
+    -What should I do if my child bypasses the parental controls?"
 
-  - intent: bank_details
-    examples: |
-      - I want to update my bank details
-      - How do I change my bank address?
-      - Can you help me update my bank information?
+- intent: account_verification
+  examples: |
+    - Reset my password
+    - I need to reset my password
+    - I'm unable to receive the verification code for my Account. Why?
+    - I'm not receiving the Account verification email. What should I do?
+    - Can I use a different phone number for Account verification?
+    -How do I verify my email address?
+    -I didn't receive the verification email. Can you resend it?
+    -How long does it take to verify my account?"
+    -I'm getting an error message when trying to verify my account. What should I do?"
+    -Can I change my email address if I haven't verified my account yet?"
+    -What should I do if the verification link has expired?"
+    -Do I need to verify my phone number as well?"
+    -Why do I need to verify my account?"
+    -How can I check if my account is verified?"
+    -I verified my account, but it's still showing as unverified. What should I do?"
 
-  - intent: account_access_issue
-    examples: |
-      - I'm locked out of my account
-      - There's unauthorized access to my account
-      - How can I change my password?
+- intent: edit_account
+  examples: |
+    - I want to edit my account
+    - Update my account details
+    -Can I update my Account details?
+    -How can I update my contact information in my Account?
+    -How can I update my payment information on your website?
+    -Can I change my username for my Account?
+    -Is there a limit on the number of times I can change my Account password?
+    -My credit card recently expired. Can I update my payment information on my Account?
+    -I'm trying to remove an old payment method from my Account. How do I do this?
+    -Can I edit the personal information linked to my Account?
+    -How do I change my Account password from the website?
+    -I need to make changes to the information associated with my Account. How can I do that?
+    -How do I update my contact information?
+    -I want to edit my Account information. Where can I do that?
+    -How do I update my Account settings on the mobile app?
+    -I'm experiencing difficulties in adding a new payment method to my Account. Can you assist?
+    -I want to use a different payment method for my subscription renewal. How can I update it?
+    -How can I update my payment information on the website?
+    -I need to update the information associated with my Account. How can I do that?
+    -Is there a way to transfer my Account to another email?
+    -How do I update the details on my Account such as address or payment information?
+    -Is it possible to update my Account details such as email or phone number?
+    -I'm trying to add a new payment method to my Account. How can I do this?
+    -Can I link multiple Accounts under a single login?
+    -How can I update the information associated with my Account?
+    -Is there a way to change the email linked to my Account?
+    -I'm encountering difficulties in adding a new payment method to my Account. Can you assist?
+    -How can I update my payment information on file?
+    -I need to update my profile picture. How can I do that?
+    -Is there a way to update the information associated with my Account?
+    -I need to edit some information on my Account. How can I do that?
+    -Is there a way to edit the personal information linked to my Account?
+    - Is it possible to modify the details stored in my account?
+    - can you provide an update regarding this?
+    - Do I need to register anything else?
 
-  - intent: manage_account
-    examples: |
-      - I want to change my account settings
-      - How can I update my preferences?
-      - I need to review my account activity
+- intent: switch_account
+  examples: |
+    - Switch my account
+    - Change my account
+    -How do I switch to a different Account?
+    -Is there an option to switch Accounts without logging out?
+    -Is there a way to switch between Accounts?
+    -Is there a feature to easily switch between different Accounts?
+    -How do I switch between Accounts on the mobile app?
+    -Can I easily switch between multiple Accounts without any hassle?
+    -How can I switch to a different Account?
+    -How can I merge two separate Accounts into one?
+    -What is the procedure for switching between multiple Accounts?
+    -Is there a way to switch between different Accounts without logging out?
+    -Can I merge two separate Accounts into one?
+    -I'm encountering difficulties switching between Accounts. Any advice?
+    -Is there an option for switching between different Accounts seamlessly?
+    -Is there a way to merge multiple Accounts into one?
+    -Can I easily switch between different Accounts without any hassle?
+    -Is there a way to switch Accounts?
+    -Is it possible to switch between multiple Accounts on your platform?
+    -Can I switch between multiple Accounts without having to log out each time?
+    -How do I unlink a device from my Account?
+    -Is it possible to transfer Account ownership to another user?
+    -Can I quickly switch between Accounts without logging out each time?
+    -I want to switch to a different Account. How can I do that without losing my data?
+    -Is there an option for seamless switching between different Accounts?
+    -Can buy by switch website ??
 
-  - intent: security_issue
-    examples: |
-      - There's unauthorized access to my account
-      - I'm receiving security alerts
-      - I'm facing a security issue
+- intent: delete_account
+  examples: |
+    - Is there a way to cancel the deletion of my Account?
+    -How do I permanently close my Account on your platform?
+    -What steps do I need to follow to delete my Account?
+    -How do I terminate my Account permanently?
+    -Will deleting my Account remove my order history?
+    -What happens to my subscription if I delete my Account?
+    -Is there a way to retrieve deleted Account data?
+    -How do I deactivate my Account?
+    -Can you guide me through the process of Account deletion?
+    -Is there a waiting period before my Account is permanently deleted?
+    -How do I delete my existing Account from your platform?
+    -Can you guide me through the steps to permanently delete my Account?
+    -How do I delete my Account from your platform?
+    -I want to close my Account permanently.
+    -Can I retrieve deleted messages from my Account inbox?
+    -How do I delete my Account if I no longer want to use your services?
+    -How can I permanently remove my Account from your platform?
+    -How can I permanently close my Account on your platform?
+    -How can I permanently delete my Account from your platform?
+    -I want to delete my Account permanently. How can I do that?
+    -I want to delete my Account. What is the process?
+    -How can I delete my Account permanently from your platform?
+    -Is there a way to delete my account permanently?
+    -Can I recover my deleted account?
+    -What's the process for permanently closing my account?
+    -Dear administrator,\r\nYour account will be deactivated. This is because your page or activity on it is not in compliance with our contractual terms.\r\nIf you believe that the deactivation of this account was a mistake, we can guide you through a few steps to request protection. You should complete these steps within a few minutes to prevent permanent deletion of your account.\r\nConfirm your account here:\r\n������������������������ apply-caseid-1852358.me\r\nIf you do not confirm, our system will automatically block your account and you will not be able to use it again. \r\nThank you for helping us improve our services. \r\nTerms of Service Team ������������ 2024 Inc.
+    
 
-  - intent: parental_controls
-    examples: |
-      - I want to set up parental controls
-      - How can I restrict content for my kids?
-      - I need to customize parental control settings
+
+- intent: login_error
+  examples: |
+    - I'm getting a "password incorrect" message when trying to log in. Help!
+    -Encountering issues with the registration process. Can you help me troubleshoot?
+    -Encountering problems during the registration process. Can you help me resolve this?
+    -I'm unable to register due to an error message. Can you assist?
+    -because i forget what email i use to register member
+    -Why can't I log in? It says my username or password is incorrect.
+    -I've been locked out of my account after multiple failed login attempts. What should I do?
+    -I'm getting a technical error message when trying to log in. What should I do?
+    - I keep getting logged out automatically. Why is this happening?
+
+- intent: check_cancellation_fee
+  examples: |
+    - What is the cancellation fee if I cancel my order before it's processed?
+    -I want to cancel my software subscription. How much is the cancellation fee?
+    -Is there a fee for canceling my streaming service subscription?
+    -What is the cancellation fee for canceling my keyboard subscription?
+    -I want to check if there are any additional fees for canceling my order.
+    -Do I have to pay a cancellation fee if I cancel my internet service before the contract ends?
+    -What is the cancellation fee for canceling my keyboard maintenance?
+    -How much is the cancellation fee for my order?
+    -I need to cancel my AC repair service. Are there any cancellation fees?
+    -Can you tell me about the cancellation fees for canceling my monitor repair?
+    -What's the fee for canceling my order?
+    -Can you tell me about the cancellation fees for canceling my monitor warranty?
+    -What is the cancellation fee for canceling my online course enrollment?
+    -Is there a fee for canceling my TV installation?
+    -Can you tell me about the cancellation fees for canceling my monitor rental?
+    -What is the cancellation fee for canceling my home appliance installation?
+    -I need to cancel my AC maintenance. Are there any cancellation fees?
+    -I'm considering canceling my mobile phone purchase. How much is the cancellation fee?
+    -Can you provide information about the cancellation fee for canceling a reservation?
+    -Do I have to pay a cancellation fee if I cancel my TV subscription?
+    -I'm considering canceling my membership. What are the cancellation fees?
+    -Do I have to pay a cancellation fee if I cancel my laptop maintenance?
+    -I'm thinking of canceling my membership. How much is the cancellation fee?
+    -What is the cancellation fee for canceling my software license?
+    -What is the cancellation fee for my order?
+    -I'm thinking of canceling my mouse warranty. Will there be any cancellation charges?
+    -Do I have to pay a cancellation fee if I cancel my credit card?
+    -What is the cancellation fee for canceling my keyboard repair?
+    -I'm considering canceling my mobile phone repair service. How much is the cancellation fee?
+    -Is there a cancellation fee for canceling my cable TV subscription?
+    -Do I have to pay a cancellation fee if I cancel my TV maintenance?
+    -Do I have to pay a cancellation fee if I cancel my car rental reservation?
+    -What is the cancellation fee for canceling my home appliance delivery?
+    -I need to cancel my AC installation appointment. Are there any cancellation fees?
+    -I need to cancel my online shopping order. Will I be charged a cancellation fee?
+
+- intent: contact_customer_service
+  examples: |
+    -I need to reach customer service regarding my smartphone warranty.
+    -I'm experiencing issues with my keyboard. How can I contact customer service for help?
+    -How can I contact customer service?
+    -The invoice I received for my order doesn't seem to match the items I purchased. Can you assist in verifying this?
+    -What is the best way to contact customer service?
+    -I'm trying to download the invoice for my order but the website is experiencing technical difficulties. Can you provide assistance?
+    -Can I request a callback from customer service instead of waiting on hold?
+    -The invoice total doesn't match the agreed-upon price. Can you investigate?
+    -I need to review the invoice for my subscription renewal but I'm unable to locate it in my Account. Can you provide guidance on how to access it?
+    -I need to reach customer service regarding my smartphone's screen replacement process.
+    -Can I get assistance from customer service for a billing discrepancy with my TV order?
+    -How long does it take for a customer service representative to respond to an email?
+    -I need to talk to customer service about a refund for my ecommerce order.
+    -I'm having trouble with my keyboard. How can I contact customer service for help?
+    -How can I reach customer service?
+    -I need assistance from your support team. How can I contact them?
+    -Hi, good morning. I have an issue with my phone and would like to check with you for solution.
+
+- intent: inform 
+  examples: |
+    - [0987654321](mobile_number)
+    - This is my phone number [0987654321](mobile_number)
+    - Here you go [0987654321](mobile_number)
+    - my name is [dataequinox](name)
+    - I am [dataequi](name)
+    - People call me[data](name)
+    - [Radhey] (name)
+    - My name is [Radheybhai](name)
+    - [radey@dataequiunox.com](email)
+    - My email is [himanshu@dataequinox.com](email)
+    - Email- [syammohan@dataequinox.com](email)
+    - email for my account is [dataequinox@gmail.com](email)
+    - 

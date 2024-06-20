@@ -14,6 +14,7 @@ intents:
   - manage_account
   - security_issue
   - parental_controls
+  - inform
 
 entities:
   - username
@@ -50,36 +51,38 @@ entities:
   - restricted_content
   - age_appropriate_settings
   - parental_controls
+ 
 
 slots:
-  requested_slot:
-    type: any
-    mappings:
-      - type: from_text
   username:
     type: text
+    influence_conversation: true
     mappings:
       - type: from_entity
         entity: username
-      - type: from_text
+      
   email:
     type: text
+    influence_conversation: true
     mappings:
       - type: from_entity
         entity: email
-      - type: from_text
+      
   name:
     type: text
+    influence_conversation: true
     mappings:
       - type: from_entity
         entity: name
-      - type: from_text
+      
   mobile_number:
     type: text
+    influence_conversation: true
     mappings:
       - type: from_entity
         entity: mobile_number
-      - type: from_text
+
+      
 
 responses:
   utter_greet:
@@ -89,7 +92,11 @@ responses:
   utter_edit_account:
     - text: "What information would you like to edit in your account?"
   utter_create_account:
-    - text: "Let's get started with creating a new account. Can you provide your name, email, and mobile number?"
+    - text: "Let's get started with creating a new account. Can you provide your name?"
+  utter_ask_email:
+    - text: "What is your email?"
+  utter_ask_phonenumber:
+    - text: "What is your mobile number?"
   utter_switch_account:
     - text: "You want to switch accounts. Please log out and log in with the new account details."
   utter_delete_account:
@@ -110,7 +117,7 @@ responses:
     - text: "Can you describe the security issue you're facing?"
   utter_parental_controls:
     - text: "Let's set up parental controls. What settings would you like to customize?"
-
+  
 forms:
   account_form:
     required_slots:
@@ -132,6 +139,7 @@ actions:
   - action_manage_account
   - action_security_issue
   - action_parental_controls
+  
 
 session_config:
   session_expiration_time: 60
