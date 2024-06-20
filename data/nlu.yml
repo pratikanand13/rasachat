@@ -1,43 +1,63 @@
 version: "3.1"
+
 nlu:
-- intent: contact_customer_service
+- intent: request_reset_password
   examples: |
-    - I want to contact customer service
-    - How can I reach customer service?
-    - I have a question for customer service
-
-- intent: contact_human_agent
+    - I forgot my password
+    - How can I reset my password?
+- intent: create_account
   examples: |
-    - I need to talk to a human agent
-    - Connect me to a human agent
-    - I want to speak with a human
-
-- intent: technical_support
+    - I want to create a new account
+    - Sign me up
+- intent: recover_account
   examples: |
-    - I need technical support
-    - My laptop has an issue
-    - I'm facing a connectivity problem
-
-- intent: delivery_options
+    - I need to recover my account
+    - I lost access to my account
+- intent: submit_bank_details
   examples: |
-    - What are the delivery options for my location?
-    - I have special delivery requirements
-    - What delivery methods do you offer?
-
-- intent: delivery_charge
+    - Here are my bank details
+    - I need to submit my bank information
+- intent: account_access_issue
   examples: |
-    - What are the delivery charges?
-    - Can you tell me the order details?
-    - Are there any discounts available for delivery?
-
-- intent: delivery_status
+    - I can't access my account
+    - Having trouble logging in
+- intent: manage_account
   examples: |
-    - What is the status of my order?
-    - Can you provide tracking information?
-    - What is the current status of my delivery?
-
-- intent: delivery_period
+    - I need to manage my account
+    - I want to update my account information
+- intent: security_issue
   examples: |
-    - When will my order be delivered?
-    - What is the expected delivery time?
-    - Can you provide the tracking information for my order?
+    - I have a security issue
+    - There is a problem with my account security
+- intent: parental_controls
+  examples: |
+    - I want to set up parental controls
+    - How can I enable parental controls?
+- intent: reset_password
+  examples: |
+    - Reset my password
+    - I need to reset my password
+- intent: edit_account
+  examples: |
+    - I want to edit my account
+    - Update my account details
+- intent: switch_account
+  examples: |
+    - Switch my account
+    - Change my account
+- intent: delete_account
+  examples: |
+    - Delete my account
+    - Remove my account
+- intent: account_verification
+  examples: |
+    - Verify my account
+    - I need to verify my account
+- intent: login_error
+  examples: |
+    - I encountered a login error
+    - There is an error when I try to log in
+- intent: bank_details
+  examples: |
+    - Provide my bank details
+    - My bank information is...

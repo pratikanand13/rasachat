@@ -1,338 +1,120 @@
 version: "3.1"
 
 intents:
-  - contact_customer_service
-  - contact_human_agent
-  - technical_support
-  - delivery_options
-  - delivery_charge
-  - delivery_status
-  - delivery_period
-  - custom_inquiry
+  - request_reset_password
+  - create_account
+  - recover_account
+  - submit_bank_details
+  - account_access_issue
+  - manage_account
+  - security_issue
+  - parental_controls
+  - reset_password
+  - edit_account
+  - switch_account
+  - delete_account
+  - account_verification
+  - login_error
+  - bank_details
 
 entities:
-  - inquiry
-  - contact_method
-  - urgency
-  - previous_interactions
-  - reason
-  - availability
-  - issue_type
-  - device
-  - error_message
-  - troubleshooting_steps
-  - destination
-  - special_requirements
-  - delivery_method
-  - location
-  - order_details
-  - discounts
-  - payment_method
-  - order_number
-  - tracking_info
-  - status
-  - order_date
-  - expected_time
-  - custom_field1
-  - custom_field2
+  - Username
+  - Email
+  - Reset_method
+  - Info_type
+  - Name
+  - Password
+  - Mobile_number
 
 slots:
-  inquiry:
+  Username:
     type: text
     mappings:
       - type: from_entity
-        entity: inquiry
-      - type: from_text
-
-  contact_method:
+        entity: Username
+  Email:
     type: text
     mappings:
       - type: from_entity
-        entity: contact_method
-      - type: from_text
-
-  urgency:
+        entity: Email
+  Reset_method:
     type: text
     mappings:
       - type: from_entity
-        entity: urgency
-      - type: from_text
-
-  previous_interactions:
+        entity: Reset_method
+  Info_type:
     type: text
     mappings:
       - type: from_entity
-        entity: previous_interactions
-      - type: from_text
-
-  reason:
+        entity: Info_type
+  Name:
     type: text
     mappings:
       - type: from_entity
-        entity: reason
-      - type: from_text
-
-  availability:
+        entity: Name
+  Password:
     type: text
     mappings:
       - type: from_entity
-        entity: availability
-      - type: from_text
-
-  issue_type:
+        entity: Password
+  Mobile_number:
     type: text
     mappings:
       - type: from_entity
-        entity: issue_type
-      - type: from_text
-
-  device:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: device
-      - type: from_text
-
-  error_message:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: error_message
-      - type: from_text
-
-  troubleshooting_steps:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: troubleshooting_steps
-      - type: from_text
-
-  destination:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: destination
-      - type: from_text
-
-  special_requirements:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: special_requirements
-      - type: from_text
-
-  delivery_method:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: delivery_method
-      - type: from_text
-
-  location:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: location
-      - type: from_text
-
-  order_details:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: order_details
-      - type: from_text
-
-  discounts:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: discounts
-      - type: from_text
-
-  payment_method:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: payment_method
-      - type: from_text
-
-  order_number:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: order_number
-      - type: from_text
-
-  tracking_info:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: tracking_info
-      - type: from_text
-
-  status:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: status
-      - type: from_text
-
-  order_date:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: order_date
-      - type: from_text
-
-  expected_time:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: expected_time
-      - type: from_text
-
-  custom_field1:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: custom_field1
-      - type: from_text
-
-  custom_field2:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: custom_field2
-      - type: from_text
+        entity: Mobile_number
 
 responses:
-  utter_contact_customer_service:
-    - text: "Please provide the nature of your inquiry, preferred contact method, urgency, and any previous interactions."
-  utter_contact_human_agent:
-    - text: "Please provide the reason for contact, urgency, preferred contact method, and your availability."
-  utter_technical_support:
-    - text: "Please specify the type of technical issue, your device, any error messages, troubleshooting steps, and urgency."
-  utter_delivery_options:
-    - text: "Please provide the destination, any special requirements, delivery options for the location, and preferred delivery method."
-  utter_delivery_charge:
-    - text: "Please provide the delivery location, order details, any available discounts, and payment method."
-  utter_delivery_status:
-    - text: "Please provide the order number, tracking information, your contact details, and the current status."
-  utter_delivery_period:
-    - text: "Please provide the order date, expected delivery time, urgency, and tracking information."
-  utter_custom_inquiry:
-    - text: "Please provide the custom field 1 and custom field 2 information."
-
-  utter_ask_inquiry:
-    - text: "Please provide the nature of your inquiry."
-  utter_ask_contact_method:
-    - text: "What is your preferred contact method?"
-  utter_ask_urgency:
-    - text: "How urgent is your inquiry?"
-  utter_ask_previous_interactions:
-    - text: "Have you had any previous interactions regarding this inquiry?"
-  utter_ask_reason:
-    - text: "What is the reason for contact?"
-  utter_ask_availability:
-    - text: "When are you available?"
-  utter_ask_issue_type:
-    - text: "What type of issue are you experiencing?"
-  utter_ask_device:
-    - text: "What device are you using?"
-  utter_ask_error_message:
-    - text: "Please provide any error messages you received."
-  utter_ask_troubleshooting_steps:
-    - text: "What troubleshooting steps have you tried?"
-  utter_ask_destination:
-    - text: "What is the delivery destination?"
-  utter_ask_special_requirements:
-    - text: "Do you have any special requirements?"
-  utter_ask_delivery_method:
-    - text: "What is your preferred delivery method?"
-  utter_ask_location:
-    - text: "Where is the delivery location?"
-  utter_ask_order_details:
-    - text: "Please provide the order details."
-  utter_ask_discounts:
-    - text: "Are there any discounts available?"
-  utter_ask_payment_method:
-    - text: "What is your preferred payment method?"
-  utter_ask_order_number:
-    - text: "What is your order number?"
-  utter_ask_tracking_info:
-    - text: "Please provide the tracking information."
-  utter_ask_status:
-    - text: "What is the current status of your order?"
-  utter_ask_order_date:
-    - text: "When did you place the order?"
-  utter_ask_expected_time:
-    - text: "What is the expected delivery time?"
-  utter_ask_custom_field1:
-    - text: "Please provide the custom field 1 information."
-  utter_ask_custom_field2:
-    - text: "Please provide the custom field 2 information."
+  utter_greet:
+    - text: "Hello! How can I help you today?"
+  utter_goodbye:
+    - text: "Goodbye! Have a nice day."
 
 forms:
-  contact_customer_service_form:
+  reset_password_form:
     required_slots:
-      - inquiry
-      - contact_method
-      - urgency
-      - previous_interactions
-
-  contact_human_agent_form:
+      - Username
+      - Email
+      - Reset_method
+  create_account_form:
     required_slots:
-      - reason
-      - urgency
-      - contact_method
-      - availability
-
-  technical_support_form:
+      - Name
+      - Email
+      - Password
+      - Mobile_number
+  recover_account_form:
     required_slots:
-      - issue_type
-      - device
-      - error_message
-      - troubleshooting_steps
-      - urgency
-
-  delivery_options_form:
+      - Username
+      - Email
+  bank_details_form:
     required_slots:
-      - destination
-      - special_requirements
-      - delivery_method
-
-  delivery_charge_form:
+      - Info_type
+  account_access_issue_form:
     required_slots:
-      - location
-      - order_details
-      - discounts
-      - payment_method
-
-  delivery_status_form:
+      - Username
+  manage_account_form:
     required_slots:
-      - order_number
-      - tracking_info
-      - status
-
-  delivery_period_form:
+      - Info_type
+  security_issue_form:
     required_slots:
-      - order_date
-      - expected_time
-      - urgency
-      - tracking_info
-
-  my_custom_form:
+      - Info_type
+  parental_controls_form:
     required_slots:
-      - custom_field1
-      - custom_field2
+      - Info_type
 
 actions:
-  - action_contact_customer_service
-  - action_contact_human_agent
-  - action_technical_support
-  - action_delivery_options
-  - action_delivery_charge
-  - action_delivery_status
-  - action_delivery_period
-  - action_custom_inquiry
-  - action_my_custom_form
+  - action_submit_reset_password
+  - action_submit_create_account
+  - action_submit_recover_account
+  - action_submit_bank_details
+  - action_submit_account_access_issue
+  - action_submit_manage_account
+  - action_submit_security_issue
+  - action_submit_parental_controls
+  - validate_reset_password_form
+  - validate_create_account_form
+  - validate_recover_account_form
+  - validate_bank_details_form
+  - validate_account_access_issue_form
+  - validate_manage_account_form
+  - validate_security_issue_form
+  - validate_parental_controls_form

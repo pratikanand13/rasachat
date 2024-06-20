@@ -1,0 +1,35 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"request_reset_password\"}}]": "reset_password_form",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"request_reset_password\"}}, {\"active_loop\": {\"name\": \"reset_password_form\"}, \"prev_action\": {\"action_name\": \"reset_password_form\"}, \"user\": {\"intent\": \"request_reset_password\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"create_account\"}}]": "create_account_form",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"create_account\"}}, {\"active_loop\": {\"name\": \"create_account_form\"}, \"prev_action\": {\"action_name\": \"create_account_form\"}, \"user\": {\"intent\": \"create_account\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"reset_password_form\"}, \"prev_action\": {\"action_name\": \"reset_password_form\"}, \"user\": {\"intent\": \"request_reset_password\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"create_account_form\"}, \"prev_action\": {\"action_name\": \"create_account_form\"}, \"user\": {\"intent\": \"create_account\"}}]": "do_not_predict_loop_action"
+    },
+    "rules_not_in_stories": [
+      "handling active loops and forms - recover_account_form - action_listen",
+      "handling active loops and forms - recover_account_form",
+      "handling active loops and forms - bank_details_form - action_listen",
+      "handling active loops and forms - account_access_issue_form",
+      "handling active loops and forms - parental_controls_form",
+      "handling active loops and forms - manage_account_form - action_listen",
+      "predicting default action with intent session_start",
+      "handling active loops and forms - create_account_form",
+      "handling active loops and forms - manage_account_form",
+      "predicting default action with intent restart",
+      "handling active loops and forms - bank_details_form",
+      "predicting default action with intent back",
+      "handling active loops and forms - parental_controls_form - action_listen",
+      "handling active loops and forms - security_issue_form",
+      "handling active loops and forms - security_issue_form - action_listen",
+      "handling active loops and forms - reset_password_form",
+      "handling active loops and forms - account_access_issue_form - action_listen"
+    ]
+  }
+}

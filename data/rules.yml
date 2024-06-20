@@ -1,42 +1,14 @@
 version: "3.1"
+
 rules:
-  - rule: Respond to contact customer service
+  - rule: Activate reset password form
     steps:
-      - intent: contact_customer_service
-      - action: utter_contact_customer_service
-
-  - rule: Respond to contact human agent
+      - intent: request_reset_password
+      - action: reset_password_form
+      - active_loop: reset_password_form
+  - rule: Activate create account form
     steps:
-      - intent: contact_human_agent
-      - action: utter_contact_human_agent
-
-  - rule: Respond to technical support
-    steps:
-      - intent: technical_support
-      - action: utter_technical_support
-
-  - rule: Respond to delivery options
-    steps:
-      - intent: delivery_options
-      - action: utter_delivery_options
-
-  - rule: Respond to delivery charge
-    steps:
-      - intent: delivery_charge
-      - action: utter_delivery_charge
-
-  - rule: Respond to delivery status
-    steps:
-      - intent: delivery_status
-      - action: utter_delivery_status
-
-  - rule: Respond to delivery period
-    steps:
-      - intent: delivery_period
-      - action: utter_delivery_period
-
-  - rule: User wants to fill the form
-    steps:
-      - intent: inform
-      - action: action_my_custom_form
-      - active_loop: my_custom_form
+      - intent: create_account
+      - action: create_account_form
+      - active_loop: create_account_form
+  # Add similar rules for other forms and intents
